@@ -1,0 +1,51 @@
+.orders{
+    display: flex;
+    align-items: center;
+    width: 720px;
+    background: #EBEFF2;
+    border-radius: 100px;
+}
+
+.takeaway, .inhouse{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 360px;
+    height: 52;
+    border-radius: 100px;
+    padding: 14px 48px 14px 48px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Poppins",sans-serif;
+    color: #2A3440;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+
+
+.active{
+    background: #F47356;
+    color: #EBEFF2;
+}
+
+.inhouse-text{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Poppins",sans-serif;
+    color: #2A3440;
+    cursor: pointer;
+}
+
+.takeaway-text{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Poppins",sans-serif;
+    color: #2A3440;
+    cursor: pointer;
+}
+
+.active-text{
+    color: #FFFFFF;
+}

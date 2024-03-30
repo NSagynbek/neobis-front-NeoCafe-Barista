@@ -1,0 +1,25 @@
+.header-options__input_container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 355px;
+    position: relative;
+}
+
+.header-options__input_search{
+    border: none;
+    outline: none;
+    width: 350px;
+    height:52px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 14px;
+    padding: 14px 16px 14px 40px;
+    background: #EBEFF2;
+}
+
+.header-options__icon_search{
+    position: absolute;
+    left: 0;
+}
