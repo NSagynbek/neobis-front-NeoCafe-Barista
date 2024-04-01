@@ -1,0 +1,63 @@
+.cancel-order-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 600px;
+    height: 258px;
+    border-radius: 20px;
+    background: white;
+}
+
+.cancel-order-header{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 90%;
+    height: 36px;
+    position: relative;
+}
+
+.cancel-close-icon{
+    position: absolute;
+    right: 10px;
+}
+
+.cancel-order-title{
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Poppins",sans-serif;
+    color: #2A3440;
+}
+
+.cancel-order-text{
+    font-size: 20px;
+    font-weight:400;
+    font-family: "Poppins",sans-serif;
+    color: #2A3440;
+}
+
+.cancel-order-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cancel-btn,.no-btn{
+    width: 260px;
+    height: 56px;
+    border-radius: 10px;
+    border: 2px solid #F47356;
+    background: white;
+    color: #F47356;
+    font-size:16px;
+    font-weight:600;
+    font-family: "Poppins",sans-serif;
+    cursor: pointer;
+}
+
+.active{
+    color: white;
+    background:#F47356 ;
+}

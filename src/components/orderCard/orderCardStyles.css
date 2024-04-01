@@ -1,0 +1,80 @@
+.order-card-container{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    align-items: center;
+    width: 243px;
+    height: 300px;
+    border-radius: 12px;
+    background: white;
+}
+
+.order-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:211px;
+    height: 36px;
+    margin-top: 5px;
+}
+
+.order-number{
+    font-size: 24px;
+    font-family: "Poppins",sans-serif;
+    font-weight: 600;
+    color: #2A3440;
+}
+
+.customer-name{
+    font-size:16px;
+    font-family: "Poppins",sans-serif;
+    font-weight:400;
+    color:#5F6366; 
+}
+
+.cutomer-name-container,
+.show-more-btn-container{
+    width:211px;
+    height: 24px;
+    display: flex;
+}
+
+.order-list{
+    display: flex;
+    flex-direction: column;
+    width: 211px;
+    gap: 5px;
+}
+
+.order-item{
+    list-style: none;
+    font-size:16px;
+    font-family: "Poppins",sans-serif;
+    font-weight:400;
+    color:#2A3440; 
+}
+
+.show-more-btn{
+    outline: none;
+    border: none;
+    font-size:16px;
+    font-family: "Poppins",sans-serif;
+    font-weight:400;
+    color:#F47356; 
+    cursor: pointer;
+    background: white;
+}
+
+.eccept-order-btn{
+    width: 211px;
+    height: 40px;
+    border-radius: 12px;
+    padding: 8px 12px 8px 10px;
+    font-size:16px;
+    font-family: "Poppins",sans-serif;
+    font-weight:400;
+    color:#F47356; 
+    cursor: pointer;
+    border: 2px solid #F47356;  
+    background: white;
+}

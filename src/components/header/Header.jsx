@@ -14,6 +14,7 @@ import {openModal} from "../../redux/index";
 import {useDispatch } from "react-redux";
 import SearchInput from "../searchInput/SearchInput";
 import Orders from "../orders/Orders";
+import OrderDetailsCard from "../../components/orderDetailsCard/OrderDetailsCard";
 
 function Header ({selectedMenuItem}){
 
@@ -36,6 +37,7 @@ function Header ({selectedMenuItem}){
     return(
         <header className="header">
           {isOpen?<NotificationCenter handleClick={handleClick} />:null}
+          <OrderDetailsCard/>
             <section className="page-title">
                 <p className='page-title__text'>{capitalizeFirstLetter(selectedMenuItem)}</p>
             </section>
