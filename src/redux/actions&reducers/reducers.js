@@ -3,12 +3,14 @@ import {
     SIGNUP_SUCCESS,
     OPEN_MODAL,
     CLOSE_MODAL,
+    OPEN_ORDER_DETAIlS,
   } from "./actionTypes";
   
   const initialState = {
     isAuthenticated: true,
     isOpen: false,
     modalData: {},
+    isOrderDetails:false,
   };
   
   const reducer = (state = initialState, action) => {
@@ -38,6 +40,12 @@ import {
           isOpen: false,
           modalData: {},
         }
+
+      case OPEN_ORDER_DETAIlS:
+        return {
+          ...state,
+          isOrderDetails:!state.isOrderDetails
+        }  
 
       
       default:

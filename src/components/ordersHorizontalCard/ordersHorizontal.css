@@ -1,0 +1,87 @@
+.horizontal-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 427px;
+    height: 120px;
+    border-radius: 14px;
+    background: white;
+}
+
+.horizontal-card-image{
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.horizontal-card-image{
+    object-fit: fill;
+}
+
+.horizontal-card-subcontainer{
+    height: 100%;
+    width:200px;
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+
+.horizontal-card-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:2px;
+    height: 100%;
+
+}
+
+.horizontal-card-item-name{
+    font-size: 20px;
+    font-family: "Poppins",sans-serif;
+    font-weight: 600;
+    color: #2A3440;
+}
+
+.horizontal-card-item-ingredient{
+    font-size:12px;
+    font-family: "Poppins",sans-serif;
+    font-weight:400;
+    color: #2A3440; 
+}
+
+.horizontal-card-item-price{
+    font-size:20px;
+    font-family: "Poppins",sans-serif;
+    font-weight:600;
+    color: #F47356; 
+}
+
+.horizontal-card-btns-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 64px;
+    height: 120px;
+    border-radius: 12px;
+    background:#F47356;
+}
+
+.horizontal-card-btns-container button{
+    border: none;
+    outline: none;
+    background:#F47356;
+    color: white;
+    font-size: 20px;
+    font-family: "Poppins",sans-serif;
+    font-weight:600;
+    cursor: pointer;
+}
+
+.horizontal-card-item-qty{
+    color: white;
+    font-size: 20px;
+    font-family: "Poppins",sans-serif;
+    font-weight:600;
+}

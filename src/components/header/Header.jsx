@@ -11,13 +11,14 @@ import {
 } from '../../utils';
 
 import {openModal} from "../../redux/index";
-import {useDispatch } from "react-redux";
+import {useDispatch,useSelector } from "react-redux";
 import SearchInput from "../searchInput/SearchInput";
 import Orders from "../orders/Orders";
 import OrderDetailsCard from "../../components/orderDetailsCard/OrderDetailsCard";
 
-function Header ({selectedMenuItem}){
 
+function Header ({selectedMenuItem}){
+  const isOrderDetails = useSelector((state)=>state.isOrderDetails);
   const[isOpen,setIsOpen]=useState(false);
   const dispatch = useDispatch();
  
@@ -37,7 +38,7 @@ function Header ({selectedMenuItem}){
     return(
         <header className="header">
           {isOpen?<NotificationCenter handleClick={handleClick} />:null}
-          <OrderDetailsCard/>
+          {isOrderDetails?<OrderDetailsCard/>:null}
             <section className="page-title">
                 <p className='page-title__text'>{capitalizeFirstLetter(selectedMenuItem)}</p>
             </section>

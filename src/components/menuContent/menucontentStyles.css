@@ -1,0 +1,42 @@
+.menu-content-container{
+    width: 100%;
+    height:100%;
+    position: relative;
+}
+
+.menu-content{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-left:100px;
+    width: 100%;
+    /* height: 500px; */
+    gap:10px;
+}
+
+.menu-categories-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width:60%;
+}
+
+.menu-categories-btn{
+    width: 126px;
+    height: 52px;
+    border-radius: 100px;
+    color: #2A3440;
+    font-family: "Poppins",sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+}
+
+.active{
+    background: #F47356;
+    color: white;
+}
+

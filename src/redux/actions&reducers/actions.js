@@ -3,6 +3,7 @@ import {
     SIGNUP_SUCCESS,
     OPEN_MODAL,
     CLOSE_MODAL,
+    OPEN_ORDER_DETAIlS,
   } from "./actionTypes"
 
 
@@ -27,4 +28,8 @@ import {
   
   export const closeModal = () => ({
     type: CLOSE_MODAL,
+  });
+
+  export const openOrderDetails = () => ({
+    type:OPEN_ORDER_DETAIlS,
   });

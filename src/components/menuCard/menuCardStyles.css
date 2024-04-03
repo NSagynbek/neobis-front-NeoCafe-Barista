@@ -1,0 +1,66 @@
+.menu-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 330px;
+    height: 140px;
+    border-radius: 16px;
+    background: white;
+    overflow: hidden;
+}
+
+.menu-card-image-container{
+    width: 120px;
+    height: 108px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.menu-card-image{
+    object-fit: fill;
+}
+
+.menu-card-text-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width:100px;
+    justify-content: space-around;
+}
+
+.menu-card-btn-container{
+    width: 70px;
+    height: 100%;
+    position: relative;
+}
+
+.menu-card-btn{
+    width: 68px;
+    height: 47px;
+    border-top-left-radius:20px;
+    border-bottom-right-radius:20px;
+    font-size:20px;
+    font-family: "Poppins",sans-serif;
+    font-weight:600;
+    color: white;
+    background: #F47356;
+    border: none;
+    outline: none;
+    position: absolute;
+    bottom:0;
+    right: 0;
+}
+
+.menu-card-name{
+    font-size:20px;
+    font-family: "Poppins",sans-serif;
+    font-weight:600;
+    color: #2A3440;
+}
+
+.menu-card-price{
+    font-size:18px;
+    font-family: "Poppins",sans-serif;
+    font-weight:600;
+    color:#F47356;
+}

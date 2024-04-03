@@ -1,7 +1,7 @@
 import "./orderCardStyles.css";
 import { InputAdornment, IconButton } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
-import {openModal} from "../../redux/index";
+import {openModal,openOrderDetails} from "../../redux/index";
 import {useDispatch } from "react-redux";
 
 function OrderCard (){
@@ -15,8 +15,16 @@ function OrderCard (){
       })
     );
   };
+
+  const handleOrderDetails = ()=>{
+    dispatch(openOrderDetails());
+    console.log("Cicked")
+  }
     return(
-        <div className="order-card-container">
+        <div 
+          className="order-card-container"
+          onClick={handleOrderDetails}
+        >
             <header className="order-card-header">
                 <p className="order-number">М-47</p>
                 <InputAdornment 

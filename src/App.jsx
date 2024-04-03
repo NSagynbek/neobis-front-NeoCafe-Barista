@@ -7,7 +7,7 @@ import RootLayout from "./layouts/rootLayout/RootLayout";
 import DynamicModal from "./modalwindows/DynamicModal";
 import AdminPage from "./pages/adminPage/AdminPage";
 import Login from "./pages/login/Login"
-
+import CodeConfirmation from "./pages/codeConfirmation/CodeConfirmation"
 
   
 function App() {
@@ -26,7 +26,7 @@ function App() {
       </Route>
 
        <Route path="/" element={<Login/>}/>
-      
+       <Route path="/code-confirm" element={<CodeConfirmation/>}/>
       </Route>
 
         

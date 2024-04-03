@@ -3,4 +3,5 @@ export {
     signupSuccess,
     openModal,
     closeModal,
+    openOrderDetails,
 } from "./actions&reducers/actions"

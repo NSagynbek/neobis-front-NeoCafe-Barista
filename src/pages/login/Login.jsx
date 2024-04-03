@@ -32,7 +32,7 @@ function Login() {
         console.log(response.data)
         setLoading(false)
         setCookie('tokenData', JSON.stringify(response.data), 7);
-        navigate('/admin-page');
+        // navigate('/admin-page');
     }catch(error){
       setLoading(false)
       setIsError(!isError);

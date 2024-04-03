@@ -1,8 +1,19 @@
 import "./orderDetailsStyles.css";
 import { InputAdornment, IconButton } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
+import OrdersHorizontalCard from "../ordersHorizontalCard/OrdersHorizontalCard";
+import { openOrderDetails } from "../../redux";
+import {useDispatch } from "react-redux";
 
 function OrderDetailsCard(){
+    
+    const dispatch = useDispatch();
+
+    const orders = [1, 2, 3];
+
+    const orderDetailsClose =()=>{
+        dispatch(openOrderDetails())
+    }
     return(
         <main className="order-details-container">
             <header className="order-details-header">
@@ -10,6 +21,7 @@ function OrderDetailsCard(){
                 <InputAdornment 
                   position="end"
                   className="order-details-close-icon"
+                  onClick={orderDetailsClose}
                 >
                     <IconButton>
                         <CloseIcon style={{color:"white", width:"30px", height:"30px"}}/>
@@ -19,7 +31,9 @@ function OrderDetailsCard(){
             </header>
 
             <div className="order-items-container">
-
+              {orders.map((order, index) => (
+                <OrdersHorizontalCard key={index} />
+               ))}
             </div>
             <button className="add-new-item">
               Добавить
