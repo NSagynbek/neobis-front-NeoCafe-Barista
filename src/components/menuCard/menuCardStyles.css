@@ -7,6 +7,10 @@
     border-radius: 16px;
     background: white;
     overflow: hidden;
+    margin-bottom:15px;
+    padding-left:20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    cursor: pointer;
 }
 
 .menu-card-image-container{
@@ -47,8 +51,8 @@
     border: none;
     outline: none;
     position: absolute;
-    bottom:0;
-    right: 0;
+    bottom:-1px;
+    right:-1px;
 }
 
 .menu-card-name{

@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 221px;
     height: 100vh;
-    background: #35536B;
+    background: #5B7E9A;
 }
 
 .sideBar-neo{
@@ -44,7 +44,7 @@
     outline: none;
     cursor: pointer;
     color: #FFFFFF;
-    background: #35536B;
+    background: #5B7E9A;
     font-size: 18px;
     font-weight: 500;
     font-family: "Poppins", sans-serif;
@@ -83,7 +83,7 @@
     width: 157px;
     border: none;
     outline: none; 
-    background: #35536B;
+    background:#5B7E9A;
     padding-left: 40px;
     font-family: "Poppins", sans-serif;
     font-size: 18px;

@@ -6,10 +6,12 @@
     background: #EBEFF2;
 }
 
-.admin-page__content{
+.main-page-content{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width:100%;
     height: 100vh;
-    gap: 10px;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
 }

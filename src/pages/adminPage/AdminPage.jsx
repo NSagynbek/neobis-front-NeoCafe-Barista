@@ -19,7 +19,7 @@ function AdminPage (){
              <SideBar onSelct={handleMenuClick}/>
          </aside>
 
-         <section className="admin-page__content">
+         <section className="main-page-content">
              <Header selectedMenuItem={selectedMenuItem}/>
              <Content selectedMenuItem={selectedMenuItem}/>
          </section>

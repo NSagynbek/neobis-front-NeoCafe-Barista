@@ -57,7 +57,7 @@ function MenuContent(){
                 <MenuCard key={index} />
                ))}
          </main>
-         {/* <div className="pagination-container">
+         <div className="pagination-container menu">
               <Stack spacing={2}>
                <Pagination 
                 count={pageCount} 
@@ -66,7 +66,7 @@ function MenuContent(){
                 onChange={pageControl}
               />
              </Stack>
-           </div> */}
+           </div>
         </div>
     )
 }

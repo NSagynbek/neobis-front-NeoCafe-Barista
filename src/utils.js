@@ -17,7 +17,7 @@ const addIconStyles = {
 }
 
 const notificationIconStyles = { 
-  background:"#35536B", 
+  background:"#5B7E9A", 
   color:"white", 
   width:"40px", 
   height:"40px", 
