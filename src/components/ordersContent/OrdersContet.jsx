@@ -3,11 +3,16 @@ import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { useState } from "react";
 import OrderCard from "../orderCard/OrderCard";
+import {useDispatch } from "react-redux";
+import { openModal } from "../../redux";
 
 function OrdersContent (){
 
+    const dispatch = useDispatch()
+
     const [pageCount,setPageCount]=useState(1)
     const [activeSection,setactiveSection]=useState("new");
+    
 
     const pageControl = (event, p) => {
         setPage(p);
@@ -16,13 +21,28 @@ function OrdersContent (){
         setactiveSection(section===activeSection?null:section);
     }  
 
+    const handleOpenModal = (modalName) => {
+      dispatch(
+        openModal({
+          name: modalName,
+        })
+      );
+    };
+
+    
+      
+  
+
     const isActive = (section) =>(section===activeSection);  
     return(
         <div className="orders-content">
             <header className="orders-header">
                 <button 
                   className={`orderStatusBtns ${isActive("new")?"active":""}`}
-                  onClick={()=>handleClick("new")}
+                  onClick={()=>{
+                    handleClick("new")
+                    handleOpenModal("reminder")
+                  }}
                 >
                     <span className="new"></span>
                     Новые

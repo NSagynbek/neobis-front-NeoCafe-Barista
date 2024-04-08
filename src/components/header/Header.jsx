@@ -1,12 +1,10 @@
 import "./headerStyles.css";
 import { InputAdornment,IconButton } from '@mui/material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import AddIcon from '@mui/icons-material/Add';
 import NotificationCenter from "../../modalwindows/notificationCenter/NotificationCenter"
 import { useState } from 'react';
 import { 
   capitalizeFirstLetter,
-  addIconStyles,
   notificationIconStyles, 
 } from '../../utils';
 
@@ -15,10 +13,11 @@ import {useDispatch,useSelector } from "react-redux";
 import SearchInput from "../searchInput/SearchInput";
 import Orders from "../orders/Orders";
 import OrderDetailsCard from "../../components/orderDetailsCard/OrderDetailsCard";
-
+import OrdersCart from "../ordersCart/OrdersCart";
 
 function Header ({selectedMenuItem}){
   const isOrderDetails = useSelector((state)=>state.isOrderDetails);
+  const isOpenCart = useSelector((state)=>state.isOpenCart);
   const[isOpen,setIsOpen]=useState(false);
   const dispatch = useDispatch();
  
@@ -39,6 +38,7 @@ function Header ({selectedMenuItem}){
         <header className="header">
           {isOpen?<NotificationCenter handleClick={handleClick} />:null}
           {isOrderDetails?<OrderDetailsCard/>:null}
+          {isOpenCart?<OrdersCart/>:null}
             <section className="page-title">
                 <p className='page-title__text'>{capitalizeFirstLetter(selectedMenuItem)}</p>
             </section>

@@ -1,7 +1,21 @@
 import "./ordersHorizontal.css";
 import coffee1 from "../../assets/coffee1.png"
+import { useState } from "react";
 function  OrdersHorizontalCard(){
 
+    const [count, setCount]=useState(1);
+
+    const incrementCount=()=>{
+        setCount((prev)=>{
+            return prev +=1
+        })
+    }
+
+    const decriment = ()=>{
+        setCount((prev)=>{
+            return prev > 0 ? prev - 1 : prev;
+        })
+    }
     return(
         <div className="horizontal-card">
             <div className="horizontal-card-image">
@@ -20,9 +34,17 @@ function  OrdersHorizontalCard(){
                 <p className="horizontal-card-item-price">140 c</p>
             </div>
             <div className="horizontal-card-btns-container">
-                <button className="horizontal-card-item-increment">+</button>
-                <p className="horizontal-card-item-qty">1</p>
-                <button className="horizontal-card-item-decrement">-</button>
+                <button className="horizontal-card-item-increment"
+                  onClick={incrementCount}
+                >
+                +
+                </button>
+                <p className="horizontal-card-item-qty">{count}</p>
+                <button className="horizontal-card-item-decrement"
+                onClick={decriment}
+                >
+                  -
+                </button>
             </div>
 
         </div>

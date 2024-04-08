@@ -3,8 +3,12 @@ import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import { useState } from "react";
 import MenuCard from "../menuCard/MenuCard";
+import {useDispatch} from "react-redux";
+import { openCart } from "../../redux";
 
 function MenuContent(){
+
+  const dispatch = useDispatch()
 
     const [pageCount,setPageCount]=useState(1)
     const [activeSection,setactiveSection]=useState("coffee");
@@ -18,6 +22,11 @@ function MenuContent(){
     }  
 
     const isActive = (section) =>(section===activeSection);  
+
+    const openCartDetails = ()=>{
+      dispatch(openCart())
+    }
+
     return(
         <div className="menu-content-container">
          <div className="menu-categories-container">
@@ -57,6 +66,13 @@ function MenuContent(){
                 <MenuCard key={index} />
                ))}
          </main>
+        <button 
+          className="menu-cart-btn"
+          onClick={openCartDetails}
+        >
+          <span>Заказ на вынос</span>
+          <span>0 сом</span>
+        </button>
          <div className="pagination-container menu">
               <Stack spacing={2}>
                <Pagination 

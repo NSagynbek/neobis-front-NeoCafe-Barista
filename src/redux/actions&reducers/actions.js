@@ -4,6 +4,7 @@ import {
     OPEN_MODAL,
     CLOSE_MODAL,
     OPEN_ORDER_DETAIlS,
+    OPEN_CART,
   } from "./actionTypes"
 
 
@@ -32,4 +33,8 @@ import {
 
   export const openOrderDetails = () => ({
     type:OPEN_ORDER_DETAIlS,
+  });
+
+  export const openCart = () => ({
+    type:OPEN_CART,
   });

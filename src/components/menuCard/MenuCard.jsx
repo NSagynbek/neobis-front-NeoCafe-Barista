@@ -1,6 +1,11 @@
 import "./menuCardStyles.css";
 import coffeeImage from "../../assets/coffee1.png"
+
+
 function MenuCard(){
+
+
+
     return(
         <div className="menu-card">
             <div className="menu-card-image-container">

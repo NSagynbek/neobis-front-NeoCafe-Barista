@@ -4,6 +4,7 @@ import {
     OPEN_MODAL,
     CLOSE_MODAL,
     OPEN_ORDER_DETAIlS,
+    OPEN_CART,
   } from "./actionTypes";
   
   const initialState = {
@@ -11,6 +12,7 @@ import {
     isOpen: false,
     modalData: {},
     isOrderDetails:false,
+    isOpenCart:false,
   };
   
   const reducer = (state = initialState, action) => {
@@ -45,6 +47,11 @@ import {
         return {
           ...state,
           isOrderDetails:!state.isOrderDetails
+        }  
+      case OPEN_CART:
+        return {
+          ...state,
+          isOpenCart:!state.isOpenCart
         }  
 
       

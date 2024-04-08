@@ -46,3 +46,25 @@
     bottom: 0;
 }
 
+.menu-cart-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 430px;
+    height: 77px;
+    border-radius: 100px;
+    background: #F47356;
+    font-family: "Poppipins",sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 55px;px;
+    top:500px;
+    cursor: pointer;
+}
+
+
+

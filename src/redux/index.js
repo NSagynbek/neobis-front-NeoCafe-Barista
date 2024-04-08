@@ -4,4 +4,5 @@ export {
     openModal,
     closeModal,
     openOrderDetails,
+    openCart,
 } from "./actions&reducers/actions"
