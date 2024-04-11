@@ -10,7 +10,14 @@
     font-size: 32px;
     font-weight: 400;
     font-family: 'Yaro', sans-serif;
-    color: #FFFFFF;
+    color: #2A3440;
+}
+
+.sideBar__logo-text .cafe{
+    font-size: 32px;
+    font-weight: 400;
+    font-family: 'Yaro', sans-serif;
+    color: white;
 }
 
 .sideBar__logo-text{
