@@ -1,0 +1,30 @@
+
+.button-mode-container{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    width: 330px;
+    height: 140px;
+    border-radius: 16px;
+    background: #F47356;
+    margin-bottom:15px;
+}
+
+.button-mode-decriment,
+.button-mode-increment{
+    border: none;
+    outline: none;
+    background:#F47356;
+    font-size: 48px;
+    font-family: "Poppins",sans-serif;
+    font-weight:600;
+    color: white;
+    cursor: pointer;
+}
+
+.button-mode-number{
+    font-size: 48px;
+    font-family: "Poppins",sans-serif;
+    font-weight:600;
+    color: white;
+}

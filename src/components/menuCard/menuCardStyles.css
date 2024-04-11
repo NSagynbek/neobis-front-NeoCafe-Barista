@@ -53,6 +53,7 @@
     position: absolute;
     bottom:-1px;
     right:-1px;
+    cursor: pointer;
 }
 
 .menu-card-name{

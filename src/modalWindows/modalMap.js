@@ -3,6 +3,7 @@ import {
   CancelOrder,
   Reminder,
   MenuItemDetails,
+  CoffeeOptions,
   } from "./index";
   
   const modalsMap = {
@@ -10,6 +11,7 @@ import {
     cancelOrder:CancelOrder,
     reminder:Reminder,
     menuItemDetails:MenuItemDetails,
+    coffeeOptions:CoffeeOptions,
       
     };
     

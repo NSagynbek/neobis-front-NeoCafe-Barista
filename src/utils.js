@@ -64,6 +64,16 @@ const stockCategoryTypes = {
   stock:"stock",
 }
 
+const coffeeOptionsStyles = {
+  fontSize: "20px", 
+  color: "#2A3440",
+  fontWeight:"400",
+}
+
+const coffeeOptionsSecondStyles = {
+  color:"#5B7E9A"
+}
+
 export{
   capitalizeFirstLetter,
   addIconStyles,
@@ -77,4 +87,6 @@ export{
   stockPositions,
   branchSelectirTypes,
   stockCategoryTypes,
+  coffeeOptionsStyles,
+  coffeeOptionsSecondStyles
 }

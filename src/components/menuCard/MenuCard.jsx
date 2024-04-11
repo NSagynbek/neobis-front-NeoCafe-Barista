@@ -2,11 +2,18 @@ import "./menuCardStyles.css";
 import coffeeImage from "../../assets/coffee1.png"
 import {useDispatch} from "react-redux"
 import {openModal} from "../../redux"
-
+import { useState,useEffect,useRef } from "react";
+import ButtonMode from "../buttonMode/ButtonMode";
 
 function MenuCard(){
  const dispatch = useDispatch();
- 
+
+ const [isButtonMode,setIsButtonMode]=useState(false);
+ const [count,setCount]=useState(0)
+ const [timeOut,setTimeOut] = useState(3000);
+
+ const timeoutRef = useRef(null); 
+
  const handleOpenModal = (modalName) => {
     dispatch(
       openModal({
@@ -15,7 +22,25 @@ function MenuCard(){
     );
   };
 
+ 
+  const handleButtonMode = () => {
+    setIsButtonMode(true);
+    clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setIsButtonMode(false);
+    },3000);
+  };
+
+
     return(
+      <>
+      {isButtonMode?(
+        <ButtonMode 
+          setCount={setCount} 
+          count={count} 
+          setTimeOut={setTimeOut}
+        />
+      ):(
         <div className="menu-card">
             <div className="menu-card-image-container">
                 <img 
@@ -33,11 +58,19 @@ function MenuCard(){
                 <p className="menu-card-price">140 с</p>
             </div>
             <div className="menu-card-btn-container">
-                <button className="menu-card-btn">
+                <button 
+                  className="menu-card-btn"
+                  onClick={()=>{
+                    // handleOpenModal("coffeeOptions")
+                    handleButtonMode();
+                  }}
+                >
                     +
                 </button>
             </div>
         </div>
+      )}
+      </>
     )
 
 }
