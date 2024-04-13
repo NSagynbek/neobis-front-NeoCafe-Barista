@@ -1,0 +1,93 @@
+.calendar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    height:550px;
+    border-radius: 20px;
+    background: white;
+}
+
+.calendar-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    width:65%;
+    height:60%;
+    padding-left: 20px;
+}
+
+.calendar-day{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: #F47356;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "Nunito",sans-serif;
+  color: #FFFFFF;
+}
+
+.placeholders{
+    background: #F4735680;
+}
+
+.week-days-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width:65%;
+    height: 65px;
+}
+
+.week-days{
+    font-size: 24px;
+    font-family: "Poppins",sans-serif;
+    font-weight: 600;
+    color: #2A3440;
+}
+
+.calendar-header{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    padding-left:75px;
+    width:560px;
+    height: 56px;
+}
+
+.working-days-container,.off-days-container{
+    width: 195px;
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.working-days-color-code{
+    width: 40px;
+    height: 40px;
+    background: #F47356;
+    border-radius: 100px;
+}
+
+.off-days-color-code{
+    width: 40px;
+    height: 40px;
+    background: #5B7E9A;
+    border-radius: 100px;
+}
+
+
+.working-days-text,
+.off-days-text{
+    font-size:20px;
+    font-family: "Poppins",sans-serif;
+    font-weight:400;
+    color:#2A3440;
+}
+

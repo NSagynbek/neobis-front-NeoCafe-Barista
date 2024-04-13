@@ -1,6 +1,7 @@
 import "./profileContentStyles.css";
 import PersonalDetails from "../personalDetails/PersonalDetails";
 import { useState } from "react";
+import Calendar from "../calendar/Calendar";
 
 
 function ProfileContent(){
@@ -8,7 +9,8 @@ function ProfileContent(){
   
     return(
         <div className="profile-main">
-            <PersonalDetails/>  
+            {/* <PersonalDetails/> */}
+            <Calendar/>
         </div>
     )
 }
