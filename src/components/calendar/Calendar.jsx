@@ -73,7 +73,7 @@ function Calendar() {
 
         <div className="off-days-container">
           <span className="off-days-color-code"></span>
-          <p className="off-days-text">Рабочий день</p>
+          <p className="off-days-text">Выходной</p>
         </div>
       </div>
       <div className="week-days-container">

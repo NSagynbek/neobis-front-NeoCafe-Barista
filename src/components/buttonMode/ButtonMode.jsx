@@ -1,12 +1,12 @@
 import "./buttonModeStyles.css";
 
-function ButtonMode({setCount,count,setTimeOut }){
+function ButtonMode({setCount,count,handleButtonMode }){
 
     const handleIncrement = () => {
         setCount((prev) => {
           return prev + 1;
         });
-        setTimeOut(3000)
+        handleButtonMode()
       };
 
       const handleDecrement = () => {
@@ -14,7 +14,7 @@ function ButtonMode({setCount,count,setTimeOut }){
           setCount((prev) => {
             return prev - 1;
           });
-          setTimeOut(3000)
+          handleButtonMode()
         }
       };
 

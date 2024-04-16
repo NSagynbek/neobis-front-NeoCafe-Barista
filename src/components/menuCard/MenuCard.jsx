@@ -38,7 +38,7 @@ function MenuCard(){
         <ButtonMode 
           setCount={setCount} 
           count={count} 
-          setTimeOut={setTimeOut}
+          handleButtonMode={handleButtonMode}
         />
       ):(
         <div className="menu-card">

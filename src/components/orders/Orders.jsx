@@ -1,29 +1,30 @@
 import "./ordersStyles.css";
 import { useState } from "react";
 
-function Orders (){
+function Orders ({firstOption,secondOption}){
 
-    const [activeSection, setActiveSection]=useState("takeaway")
+    const [activeSection, setActiveSection]=useState(firstOption)
 
     const handleClick = (section)=>{
         setActiveSection(section===activeSection?null:section);
     }
+    
 
     const isActive = (section) =>(section===activeSection)
 
     return (
         <div className="orders">
             <button 
-              className={`takeaway ${isActive("takeaway")?"active":""}`}
-              onClick={()=>handleClick("takeaway")}
+              className={`takeaway ${isActive(firstOption) ? "active" : "" }`}
+              onClick={()=>handleClick(firstOption)}
             >
-                На вынос
+                {firstOption}
             </button>
             <button 
-              className={`inhouse ${isActive("inhouse")?"active":""}`}
-              onClick={()=>handleClick("inhouse")}
+              className={`inhouse ${isActive(secondOption)? "active":""}`}
+              onClick={()=>handleClick(secondOption)}
             >
-                В заведении
+                {secondOption}
             </button>
         </div>
 
