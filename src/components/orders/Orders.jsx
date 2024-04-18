@@ -1,16 +1,30 @@
 import "./ordersStyles.css";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { headerActiveSection } from "../../redux";
 
 function Orders ({firstOption,secondOption}){
 
+    const dispatch = useDispatch();
+
     const [activeSection, setActiveSection]=useState(firstOption)
 
+    useEffect(()=>{
+        setActiveSection(firstOption)
+    },[firstOption])
+
+    useEffect(()=>{
+        dispatch(headerActiveSection(activeSection));
+    },[activeSection])
+
     const handleClick = (section)=>{
-        setActiveSection(section===activeSection?null:section);
+        setActiveSection(section === activeSection ? null : section);
     }
     
-
-    const isActive = (section) =>(section===activeSection)
+    const isActive = (section)=>{
+        return section===activeSection
+    }
+    
 
     return (
         <div className="orders">

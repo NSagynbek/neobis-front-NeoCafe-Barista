@@ -1,12 +1,26 @@
 import "./ordersContentStyles.css";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import OrderCard from "../orderCard/OrderCard";
 import {useDispatch } from "react-redux";
 import { openModal } from "../../redux";
+import { getAllOrders } from "../../api";
 
 function OrdersContent (){
+  // id placeholder
+  const id = 3;
+   useEffect(()=>{
+    const getOrders = async ()=>{
+      try{
+        const response = await getAllOrders(id)
+        console.log(response)
+      }catch(error){
+        console.log(error.response.status)
+      }  
+    }
+    getOrders()
+   },[])
 
     const dispatch = useDispatch()
 

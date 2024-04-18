@@ -9,6 +9,8 @@ import { login } from "../../api";
 import { setCookie } from "../../api/tokenService";
 import { loginSchema } from "../../schemas";
 import { Bars } from 'react-loader-spinner'
+import {useDispatch} from "react-redux"
+import { saveEmail } from "../../redux";
 
 const initialValues={
   email:"",
@@ -20,6 +22,7 @@ const validationSchema = yup.object(loginSchema);
 
 function Login() {
   
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isError,setIsError] = useState(false);
   let [loading, setLoading] = useState(false);
@@ -29,10 +32,11 @@ function Login() {
     console.log(values)
     try{
         const response = await login(values);
-        console.log(response.data)
+        dispatch(saveEmail(values))
         setLoading(false)
         setCookie('tokenData', JSON.stringify(response.data), 7);
-        // navigate('/admin-page');
+
+        navigate('/code-confirm');
     }catch(error){
       setLoading(false)
       setIsError(!isError);

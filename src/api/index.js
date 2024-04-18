@@ -1,11 +1,4 @@
-// import instance from "./axiosConfig"
-import axios from "axios";
-const instance = axios.create({
-    baseURL: 'https://tokyo-backender.org.kg/',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+import instance from "./axiosConfig"
 
   
 export const login = async (data)=>{
@@ -13,8 +6,13 @@ export const login = async (data)=>{
     return res
 }
 
-export const authorize = async (code)=>{
-    const res = await instance.post("bartender/login/",code)
+export const authorize = async (data)=>{
+    const res = await instance.post("bartender/login/",data)
     return res
+}
+
+export const getAllOrders = async (branchId)=>{
+  const response = await instance.get(`orders/all/${branchId}/`)
+  return response
 }
 

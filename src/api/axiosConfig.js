@@ -15,7 +15,7 @@ import axios from 'axios';
 
    instance.interceptors.request.use(
      async (config) => {
-       const excludedEndpoints = ["cafe/admin/login/"];
+       const excludedEndpoints = ["bartender/check-email-login/","bartender/login/"];
        if(!excludedEndpoints.some(endpoint=>config.url.endsWith(endpoint))){
         const token = JSON.parse(getCookie("tokenData")); 
          if (token) {
@@ -39,7 +39,7 @@ import axios from 'axios';
    },
    async (error) => {
      const originalRequest = error.config;
-     if (error.response.status === 403 && !originalRequest._retry && retryCounter < 3) {
+     if (error.response.status === 401 && !originalRequest._retry && retryCounter < 3) {
        originalRequest._retry = true;
        retryCounter++;
 

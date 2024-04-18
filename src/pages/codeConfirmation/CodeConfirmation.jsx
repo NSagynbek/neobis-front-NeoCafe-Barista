@@ -4,15 +4,25 @@ import { useState } from "react";
 import { authorize } from "../../api";
 import OTPInput from "../../components/otpInput/OtpInput";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 function CodeConfirmation (){
+
+    const userEmail = useSelector((state)=>state.email);
     const [error,setError]= useState(null);
+    const [code,setCode]=useState(null);
     const navigate = useNavigate();
 
+
     const handleClick = async ()=>{
-      navigate("/code-confirm")
+       const formData = {
+         email:userEmail.email,
+         confirmation_code:code.join("")
+       }
+       console.log(formData)
          try{
-             const response = await authorize(code)
+             const response = await authorize(formData)
+             navigate("/admin-page")
          }catch(error){
              setError(error.message)      
          }
@@ -41,7 +51,11 @@ function CodeConfirmation (){
                 >
                   Код подтверждения
                 </p>
-                <OTPInput error={error}/>   
+                <OTPInput 
+                  error={error}
+                  setCode={setCode}
+                />   
+
                 <button
                   type="submit" 
                   className="loginBtn-valid"   

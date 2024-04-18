@@ -5,6 +5,8 @@ import {
     CLOSE_MODAL,
     OPEN_ORDER_DETAIlS,
     OPEN_CART,
+    HEADER_ACTIVE_SECTION,
+    SET_EMAIL,
   } from "./actionTypes"
 
 
@@ -38,3 +40,17 @@ import {
   export const openCart = () => ({
     type:OPEN_CART,
   });
+
+  export const headerActiveSection = (section) => {
+    return{
+      type: HEADER_ACTIVE_SECTION,
+      payload:section
+    }
+  };
+
+  export const saveEmail = (email) => {
+    return{
+      type: SET_EMAIL,
+      payload:email
+    }
+  };

@@ -4,3 +4,5 @@ export const OPEN_MODAL = 'OPEN_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const OPEN_ORDER_DETAIlS = "OPEN_ORDER_DETAIlS";
 export const OPEN_CART = "OPEN_CART ";
+export const HEADER_ACTIVE_SECTION = "HEADER_ACTIVE_SECTION";
+export const SET_EMAIL = "SET_EMAIL";

@@ -16,10 +16,13 @@ import OrderDetailsCard from "../../components/orderDetailsCard/OrderDetailsCard
 import OrdersCart from "../ordersCart/OrdersCart";
 
 function Header ({selectedMenuItem}){
+   
+  const dispatch = useDispatch();
+
   const isOrderDetails = useSelector((state)=>state.isOrderDetails);
   const isOpenCart = useSelector((state)=>state.isOpenCart);
   const[isOpen,setIsOpen]=useState(false);
-  const dispatch = useDispatch();
+  
   
   const handleClick=()=>{
     setIsOpen(!isOpen)
@@ -45,16 +48,26 @@ function Header ({selectedMenuItem}){
 
             <section 
               className={`header-options 
-              ${selectedMenuItem === "orders" || selectedMenuItem === "profile" ? "header-option-active" : "search-input-styles"}`}>
-            {selectedMenuItem === "orders" ? (
-              <Orders firstOption={"На вынос"} secondOption={"В заведение"} />
-             ) : selectedMenuItem === "profile" ? (
-               <Orders firstOption={"Профиль"} secondOption={"График работы"} />
-             ) : (
-              <SearchInput />
-             )}        
+              ${selectedMenuItem === "orders" || 
+                selectedMenuItem === "profile" ? 
+                "header-option-active" : 
+                "search-input-styles"}`
+              }
+            >
+              {selectedMenuItem === "orders" ? (
+                <Orders 
+                  firstOption={"На вынос"} 
+                  secondOption={"В заведение"}
+                />
+               ) : selectedMenuItem === "profile" ? (
+                 <Orders 
+                   firstOption={"Профиль"} 
+                   secondOption={"График работы"} 
+                 />
+               ) : (
+                <SearchInput />
+               )}        
                 <div className='header-options__btn_container'>
-              
                   
                 </div>             
                 <InputAdornment 

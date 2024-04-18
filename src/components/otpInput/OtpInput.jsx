@@ -1,16 +1,19 @@
 import { useState, useRef } from 'react';
 import './otpInputStyles.css';
 
-function OTPInput({error}) {
+
+function OTPInput({error,setCode}) {
+
   const [isError,setIsError] = useState(false);
   const [otp, setOtp] = useState(['', '', '', '']);
   const inputRefs = useRef([]);
+
   const handleChange = (index, value) => {
     const newOtp = [...otp];
     newOtp[index] = value;
     setOtp(newOtp);
+    setCode(newOtp)
 
-    // Move to the next input box
     if (index < otp.length - 1 && value !== '') {
       inputRefs.current[index + 1].focus();
     }

@@ -5,4 +5,6 @@ export {
     closeModal,
     openOrderDetails,
     openCart,
+    headerActiveSection,
+    saveEmail,
 } from "./actions&reducers/actions"

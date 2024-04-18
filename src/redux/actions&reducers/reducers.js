@@ -5,7 +5,10 @@ import {
     CLOSE_MODAL,
     OPEN_ORDER_DETAIlS,
     OPEN_CART,
+    HEADER_ACTIVE_SECTION,
+    SET_EMAIL,
   } from "./actionTypes";
+import { headerActiveSection } from "./actions";
   
   const initialState = {
     isAuthenticated: true,
@@ -13,6 +16,8 @@ import {
     modalData: {},
     isOrderDetails:false,
     isOpenCart:false,
+    headerActiveSection:"Профиль",
+    email:"",
   };
   
   const reducer = (state = initialState, action) => {
@@ -53,6 +58,18 @@ import {
           ...state,
           isOpenCart:!state.isOpenCart
         }  
+      
+      case HEADER_ACTIVE_SECTION:
+         return {
+          ...state,
+          headerActiveSection:action.payload,
+        } 
+
+      case SET_EMAIL:
+        return {
+          ...state,
+          email:action.payload,
+        }     
 
       
       default:
