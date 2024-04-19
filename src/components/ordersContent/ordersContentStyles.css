@@ -69,21 +69,21 @@
     border-radius: 100%;
 }
 
-.new{
+.status-icon-1{
     background: #85CAFF;
 }
 
-.on-process{
+.status-icon-2{
     background: #FDF876;
 }
 
-.ready{
+.status-icon-3{
     background: #51DB67;
 }
-.canceled{
+.status-icon-4{
     background: #EBEFF2;
 }
 
-.complete{
+.status-icon-5{
     background: #2A3440;
 }

@@ -5,7 +5,7 @@ import {openModal,openOrderDetails} from "../../redux/index";
 import {useDispatch } from "react-redux";
 import { useState } from "react";
 
-function OrderCard (){
+function OrderCard ({order}){
 
   const [isActive,setIsActive]=useState(false);
 
@@ -24,30 +24,31 @@ function OrderCard (){
     setIsActive(!isActive);
   }
     return(
+     
         <div 
           className={`order-card-container ${isActive?"order-card-active":""}`}
         >
-            <header className="order-card-header">
-                <p className={`order-number ${isActive?"order-number-active":""}`}>М-47</p>
-                <InputAdornment 
-                  position="end"
-                  className="cancel-order-btn"
-                  onClick={()=>handleOpenModal("cancelOrder")}
-                >
-                    <IconButton>
-                        <CloseIcon style={{color:isActive?"white":"#2A3440"}}/>
-                    </IconButton>
-                </InputAdornment>
-            </header>
+          
+           <header className="order-card-header">
+           <p className={`order-number ${isActive?"order-number-active":""}`}>M-{order.order_number}</p>
+           <InputAdornment position="end">
+             <IconButton>
+              <CloseIcon style={{color:isActive?"white":"#2A3440"}}/>
+             </IconButton>
+           </InputAdornment>
+           </header>
+            
             <div className="cutomer-name-container">
-              <p className={`customer-name ${isActive?"customer-name-active":""}`}>Валентина</p>
+              <p className={`customer-name ${isActive?"customer-name-active":""}`}>
+                {order.employee_profile?employee_profile:"Не указано"}
+              </p>
             </div>
             <ul className="order-list"
               onClick={handleOrderDetails}
             >
-                <li className={`order-item ${isActive?"order-item-active":""}`}>1x Капучино</li>
-                <li className={`order-item ${isActive?"order-item-active":""}`}>1x Багровый закат</li>
-                <li className={`order-item ${isActive?"order-item-active":""}`}>1x Мохито Клубничный</li> 
+              {order.ITO.map((item,index)=>(
+                 <li className={`order-item ${isActive?"order-item-active":""}`}>{item.quantity}x {item.item_name}</li>
+              ))}
             </ul>
             <div className="show-more-btn-container">
                 <button 

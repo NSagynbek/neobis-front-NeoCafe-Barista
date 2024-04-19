@@ -5,6 +5,7 @@ import { authorize } from "../../api";
 import OTPInput from "../../components/otpInput/OtpInput";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
+import { setCookie } from "../../api/tokenService";
 
 function CodeConfirmation (){
 
@@ -22,6 +23,9 @@ function CodeConfirmation (){
        console.log(formData)
          try{
              const response = await authorize(formData)
+             setCookie('tokenData', JSON.stringify(response.data), 7);
+             localStorage.setItem('branch', response.data.branch_id);
+             console.log("****************",response)
              navigate("/admin-page")
          }catch(error){
              setError(error.message)      

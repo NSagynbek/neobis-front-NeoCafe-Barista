@@ -6,7 +6,6 @@ import {useState} from "react";
 import { useNavigate } from 'react-router';
 import loginImage from "../../assets/loginimg.png"
 import { login } from "../../api";
-import { setCookie } from "../../api/tokenService";
 import { loginSchema } from "../../schemas";
 import { Bars } from 'react-loader-spinner'
 import {useDispatch} from "react-redux"
@@ -34,8 +33,6 @@ function Login() {
         const response = await login(values);
         dispatch(saveEmail(values))
         setLoading(false)
-        setCookie('tokenData', JSON.stringify(response.data), 7);
-
         navigate('/code-confirm');
     }catch(error){
       setLoading(false)

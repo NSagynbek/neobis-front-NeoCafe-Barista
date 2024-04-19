@@ -10,7 +10,8 @@ import axios from 'axios';
   });
 
 
-  
+  let access = '';
+  let refresh = '';
 
 
    instance.interceptors.request.use(
@@ -19,7 +20,7 @@ import axios from 'axios';
        if(!excludedEndpoints.some(endpoint=>config.url.endsWith(endpoint))){
         const token = JSON.parse(getCookie("tokenData")); 
          if (token) {
-           config.headers.Authorization = `Bearer ${token.access_token}`;
+           config.headers.Authorization = `Bearer ${token.access_token||token.access}`;
          }
        }
          return config;
@@ -46,13 +47,13 @@ import axios from 'axios';
        const token = JSON.parse(getCookie("tokenData"));  
 
        const formData = {
-         token: token.refresh_token,
+         refresh: token.refresh_token||token.refresh,
        };
 
        try {
          const response = await instance.post("token/refresh/",formData);
          setCookie('tokenData', JSON.stringify(response.data), 7); 
-         originalRequest.headers.Authorization = `Bearer ${response.data.access}`;
+         originalRequest.headers.Authorization = `Bearer ${response.data.access_token||token.access}`;
          retryCounter = 0; 
          return instance(originalRequest);
        } catch (refreshError) {

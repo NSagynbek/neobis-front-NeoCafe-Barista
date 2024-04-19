@@ -7,9 +7,12 @@ import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import { sideBarIconsStyles } from "../../utils";
 import Create from "@mui/icons-material/Create";
-
+import { removeCookie } from "../../api/tokenService";
+import {useNavigate} from "react-router-dom";
 
 function SideBar({onSelct}) {
+
+  const navigate = useNavigate();
 
   const [activeSection, setActiveSection] = useState(null);
 
@@ -21,8 +24,9 @@ function SideBar({onSelct}) {
   const isActive = (section) => section === activeSection;
 
  
- const handleClick = ()=>{
-
+ const handleExit = ()=>{
+   removeCookie("tokenData");
+   navigate("/")
  }
 
   return (
@@ -94,8 +98,11 @@ function SideBar({onSelct}) {
        
 
         <footer >
-          <div className="exit-icon-container" onClick={handleClick}>             
-               <button className="exit-icin__btn" id="exit-icon">
+          <div className="exit-icon-container" onClick={handleExit}>             
+               <button 
+                 className="exit-icin__btn" 
+                 id="exit-icon"
+                >
                  Выйти
                </button>           
              <InputAdornment 

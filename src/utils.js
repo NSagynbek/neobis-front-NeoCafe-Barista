@@ -74,6 +74,14 @@ const coffeeOptionsSecondStyles = {
   color:"#5B7E9A"
 }
 
+const orderTypeConvert = (type)=>{
+   if(type==="На вынос"){
+    return "Takeaway"
+   } else{
+    return "In Venue"
+   }
+}
+
 export{
   capitalizeFirstLetter,
   addIconStyles,
@@ -88,5 +96,6 @@ export{
   branchSelectirTypes,
   stockCategoryTypes,
   coffeeOptionsStyles,
-  coffeeOptionsSecondStyles
+  coffeeOptionsSecondStyles,
+  orderTypeConvert,
 }

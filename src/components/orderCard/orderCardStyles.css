@@ -1,6 +1,7 @@
 .order-card-container{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     gap:15px;
     align-items: center;
     width: 243px;
